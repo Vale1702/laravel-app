@@ -18,6 +18,10 @@ class PageController extends Controller
         // $post = Post::find(25); Busca un id en especifico
         // dd($post); Te permite visualizar el resultado 
 
+        //Crea información paginada y ordenada de forma descendente
+        $posts = Post::latest()->paginate();
+        // dd($posts);
+
     return view('blog', ['posts' => $posts]);
     }
 
