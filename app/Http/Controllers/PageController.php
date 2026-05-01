@@ -12,7 +12,7 @@ class PageController extends Controller
     }
 
     public function blog(){
-    //Consulta a Base de datos
+    //Consulta a Base de datos del listado de publicaciones
         // $posts = Post::get();
         // $post = Post::first(); Muestra el primer registro
         // $post = Post::find(25); Busca un id en especifico
@@ -26,7 +26,7 @@ class PageController extends Controller
     }
 
     public function post(Post $post){
-
+    //publicación individual
         return view('post', ['post' => $post]);
     }
 }

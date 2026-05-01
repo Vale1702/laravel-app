@@ -9,6 +9,13 @@
     <p>
         <a href=" {{route('home') }} ">Home</a>
         <a href=" {{route('blog') }} ">Blog</a>
+
+        <!-- Verifica si estamos logeados o no -->
+        @auth
+        <a href="{{route('dashboard') }}">Dashboard</a>
+        @else
+        <a href="{{route('login') }}">login</a>
+        @endauth
     </p>
     <hr>
 
