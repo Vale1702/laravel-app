@@ -10,9 +10,7 @@ use Illuminate\Support\Str;
 class PostController extends Controller
 {
     public function index(){
-        return view("posts.index",[
-            "posts" => Post::latest()->paginate()
-             ]);
+        return view("posts.index", ["posts" => Post::latest()->paginate()]);
     }
     
     public function create(Post $post){
@@ -20,7 +18,7 @@ class PostController extends Controller
     }
     
     public function store(Request $request){
-        $post = $request->user()->posts()->create([
+            $post = $request->user()->posts()->create([
             'title' => $title = $request->title,
             'slug' => Str::slug($title),
             'body' =>$body = $request->body,

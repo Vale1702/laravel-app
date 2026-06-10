@@ -15,7 +15,8 @@
                         @foreach ($posts as $post)
                         <tr class="border-b border-gray-200 text-sm">
                             <td class="px-6 py-4"> {{$post->title}}</td>
-                            <td class="px-6 py-4"> <a href="{{route('posts.edit', $post)}}" class="text-indigo-600">Editar</a></td>
+                            <td class="px-6 py-4"> 
+                                <a href="{{route('posts.edit', $post)}}" class="text-indigo-600">Editar</a></td>
                             <td class="px-6 py-4"> 
                                 <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                     @csrf
