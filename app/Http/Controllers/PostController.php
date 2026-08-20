@@ -30,6 +30,15 @@ class PostController extends Controller
         return view("posts.edit", ["post" =>$post]);
     }
 
+    public function update(Request $request, Post $post ){
+        $post -> update([
+            'title' => $title = $request->title,
+            'slug' => Str::slug($title),
+            'body' =>$body = $request->body,
+        ]);
+        return redirect()->route('posts.edit', $post);
+    }
+
     public function destroy(Post $post){
         $post->delete();
         return back();
