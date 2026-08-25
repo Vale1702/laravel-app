@@ -8,21 +8,9 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function home(){
-        return view ('home');
-    }
-
-    public function blog(){
-    //Consulta a Base de datos del listado de publicaciones
-        // $posts = Post::get();
-        // $post = Post::first(); Muestra el primer registro
-        // $post = Post::find(25); Busca un id en especifico
-        // dd($post); Te permite visualizar el resultado 
-
-        //Crea información paginada y ordenada de forma descendente
         $posts = Post::latest()->paginate();
-        // dd($posts);
 
-    return view('blog', ['posts' => $posts]);
+        return view ('home', ['posts' => $posts]);
     }
 
     public function post(Post $post){
