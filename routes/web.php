@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(PageController::class)->group(function () {
-    Route::get("/", "home")->name("home");
+    Route::get("/", "home")->inertia("Home");
     Route::get("blog/{post:slug}", "post")->name("post");
 });
 
