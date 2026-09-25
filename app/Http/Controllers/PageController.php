@@ -13,11 +13,11 @@ class PageController extends Controller
         ->with('user')
         ->latest()->paginate();
 
-        return view ('home', ['posts' => $posts]);
+        return inertia ('Home', ['posts' => $posts]);
     }
 
     public function post(Post $post){
     //publicación individual
-        return view('post', ['post' => $post]);
+        return inertia('post', ['post' => $post]);
     }
 }

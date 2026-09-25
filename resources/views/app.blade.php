@@ -6,7 +6,7 @@
     <title>ToDoApp</title>
     @viteReactRefresh
     @vite('resources/js/app.jsx')
-        @inertiaHead
+    @inertiaHead
 </head>
 <body>
     @inertia

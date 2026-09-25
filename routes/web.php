@@ -17,10 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(PageController::class)->group(function () {
-    Route::get("/", "home")->inertia("Home");
+    Route::get("/", "home")->name("Home");
     Route::get("blog/{post:slug}", "post")->name("post");
 });
-
 
 Route::redirect('dashboard', 'posts')->name('dashboard');
 
